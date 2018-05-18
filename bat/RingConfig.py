@@ -2,7 +2,7 @@ import math
 import logging
 
 
-class SOMATOM_go:
+class SomatomGo:
     def __init__(self, f=535, m=27.8, n=21.3, 
                  centralbeam=435.25, nmax=768, 
                  modchan=32, name="Now"):
@@ -53,7 +53,7 @@ class SOMATOM_go:
 
 
 if __name__ == "__main__":
-    go = SOMATOM_go(nmax=1)
+    go = SomatomGo(nmax=1)
     print(go.CompleteFlag)
     print(go.calculate_channel(250))
     print(go.calculate_distance(34))

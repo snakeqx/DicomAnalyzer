@@ -6,7 +6,7 @@ import logging
 import math
 from PIL import ImageTk, Image
 from bat.ImageHandler import ImageHandler
-from bat.RingConfig import SOMATOM_go
+from bat.RingConfig import SomatomGo
 import matplotlib.pyplot as plt
 
 logging.basicConfig(level=logging.INFO,
@@ -35,9 +35,9 @@ class GUI:
         self.CurrentFile = None
         # Tk main loop
         self.Root = tk.Tk()
-        self.Addwidget()
+        self.__add_widget()
 
-    def Addwidget(self):
+    def __add_widget(self):
         # canvas
         self.Canvas = tk.Canvas(self.Root, height=512, width=512)
         self.Canvas.bind('<Button-1>', self.click_on_image)
@@ -119,16 +119,16 @@ class GUI:
             return
         system_string = self.Image.Modality
         if system_string == "SOMATOM go.Up":
-            self.System = SOMATOM_go()  # default setting
+            self.System = SomatomGo()  # default setting
         elif system_string == "SOMATOM go.Now":
-            self.System = SOMATOM_go()  # default setting
+            self.System = SomatomGo()  # default setting
         elif system_string == "SOMATOM go.All":
-            self.System = SOMATOM_go()  # default setting
+            self.System = SomatomGo()  # default setting
         elif system_string == "SOMATOM go.Top":
-            self.System = SOMATOM_go(f=535, m=27.9, n=22.7,
-                                     centralbeam=463.25,
-                                     nmax=840, modchan=20,
-                                     name="Top")
+            self.System = SomatomGo(f=535, m=27.9, n=22.7,
+                                    centralbeam=463.25,
+                                    nmax=840, modchan=20,
+                                    name="Top")
         else:
             self.IsSystemLoaded = False
         self.IsSystemLoaded = True
