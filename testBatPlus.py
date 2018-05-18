@@ -33,14 +33,14 @@ def main():
         count += 1
         if _image.isImageComplete:
             _image.save_image()
-            if _image.Kernel == "Hr40f" and (_image.OriginalCollimation == 16 or 
-                                             _image.OriginalCollimation == 1 or 
-                                             _image.OriginalCollimation == 32 or 
+            if _image.Kernel == "Hr40f" and (_image.OriginalCollimation == 16 or
+                                             _image.OriginalCollimation == 1 or
+                                             _image.OriginalCollimation == 32 or
                                              _image.OriginalCollimation == 64):
                 _image.draw_sorted_iq_result(100, 2)
-            if _image.Kernel == "Br40f" and ((_image.OriginalCollimation == 16 or 
+            if _image.Kernel == "Br40f" and ((_image.OriginalCollimation == 16 or
                                               _image.OriginalCollimation == 32) and
-                                             _image.KVP==130):
+                                             _image.KVP == 130):
                 _image.draw_sorted_iq_result(100, 2)
             SQL3Handler(_image).insert_data()
     print("Program exits sucesfully.")
@@ -48,3 +48,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

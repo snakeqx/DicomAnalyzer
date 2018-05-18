@@ -2,7 +2,7 @@ import struct
 import logging
 
 
-class TableFile():
+class TableFile:
     def __init__(self, name):
         self.CurrentByteCount = 0
         self.IntSize = 4

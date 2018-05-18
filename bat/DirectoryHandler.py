@@ -1,8 +1,7 @@
 #!coding=utf8
 import os
-import dicom
+import pydicom
 import logging
-import sys
 
 
 class DirectoryHandler:
@@ -37,7 +36,7 @@ class DirectoryHandler:
             if os.path.isfile(full_dl):
                 try:
                     # try to open the dicom file.
-                    _ = dicom.read_file(full_dl)[0x0018, 0x1000].value
+                    _ = pydicom.read_file(full_dl)[0x0018, 0x1000].value
                     self.Dicom_File_Path.append(full_dl)
                     self.Total_Dicom_Quantity += 1
                     logging.info(str(full_dl))

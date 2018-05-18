@@ -3,7 +3,7 @@ import numpy as np
 from readtable.readfile import TableFile
 
 
-class TableData():
+class TableData:
     TableTypeDict = {
         2: "Air Calibration",
         7: "Channel Correction",
@@ -77,7 +77,7 @@ class TableData():
         # TODO
         # Not Right type!!!
         self.ScaledDose = self.File.ReadFloat()
-        logging.warn("Known Bug, the scaled dose is not correct!")
+        logging.warning("Known Bug, the scaled dose is not correct!")
 
     def __init_data(self):
         offset = self.DataOffset-self.File.CurrentByteCount

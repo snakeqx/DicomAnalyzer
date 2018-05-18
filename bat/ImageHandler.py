@@ -319,7 +319,7 @@ class ImageHandler(DicomHandler):
             else:
                 if x > 0 and y > 0:
                     theta.append(int(math.degrees(math.atan(y/x))))
-                elif x < 0 and y > 0:
+                elif x < 0 < y:
                     theta.append(int((math.degrees(math.atan(y/x))*-1)+90))
                 elif x < 0 and y < 0:
                     theta.append(int(math.degrees(math.atan(y/x))+180))

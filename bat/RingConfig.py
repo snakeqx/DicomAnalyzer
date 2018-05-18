@@ -2,7 +2,7 @@ import math
 import logging
 
 
-class SOMATOM_go():
+class SOMATOM_go:
     def __init__(self, f=535, m=27.8, n=21.3, 
                  centralbeam=435.25, nmax=768, 
                  modchan=32, name="Now"):
@@ -31,7 +31,7 @@ class SOMATOM_go():
         result = math.sin(
             (chan-self.CentralBeam)*self.DeltaBeta*math.pi/180
             )*self.F
-        return (math.floor(abs(result)))
+        return math.floor(abs(result))
 
     def calculate_channel(self, distance):
         if self.CompleteFlag is False:

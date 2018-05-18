@@ -23,7 +23,7 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 
-class GUI():
+class GUI:
     def __init__(self):
         self.Center = 256
         self.IndicateCircle = None
@@ -151,7 +151,7 @@ class GUI():
             self.WindowWidthText.insert(0, default_window[0])
             self.WindowCenterText.insert(0, default_window[1])
             return default_window
-        return (width_int, center_int)
+        return width_int, center_int
 
     def load_image(self):
         _filename = tk.filedialog.askopenfilename()

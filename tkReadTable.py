@@ -25,7 +25,7 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 
-class GUI():
+class GUI:
     def __init__(self):
         self.CurrentFileName = None
         self.Table = None
@@ -110,7 +110,7 @@ class GUI():
                                         slice_sep=slice_sep)      
         fig = plt.figure()
         for i in range(0, data.shape[1]):
-            plt.plot(data[:,i])
+            plt.plot(data[:, i])
 
         buf = io.BytesIO()
         plt.savefig(buf, format='png')
@@ -120,6 +120,7 @@ class GUI():
         self.Plot.configure(image=photo)
         self.Plot.image = photo
         buf.close()
+
 
 if __name__ == '__main__':
     ui = GUI()
