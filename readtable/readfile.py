@@ -15,35 +15,36 @@ class TableFile:
             logging.error(str(e))
             self.FP = False
 
-    def ReadInt(self):
+    def readint(self):
         if self.FP is not False:
             self.CurrentByteCount += self.IntSize
             return struct.unpack("i", self.FP.read(self.IntSize))[0]
         else:
             logging.error("File is not opened correctly.")
 
-    def ReadFloat(self):
+    def readfloat(self):
         if self.FP is not False:
             self.CurrentByteCount += self.FloatSize
             return struct.unpack("f", self.FP.read(self.FloatSize))[0]
         else:
             logging.error("File is not opened correctly.")
 
-    def ReadLongFloat(self):
+    def readlongfloat(self):
         if self.FP is not False:
             self.CurrentByteCount += self.LongFloatSize
             return struct.unpack("d", self.FP.read(self.LongFloatSize))[0]
         else:
             logging.error("File is not opened correctly.")
 
-    def ReadByte(self):
+    def readbyte(self):
         if self.FP is not False:
             self.CurrentByteCount += self.ByteSize
             return struct.unpack("B", self.FP.read(self.ByteSize))[0]
         else:
             logging.error("File is not opened correctly.")
 
-    def Close(self):
+    # noinspection PyUnresolvedReferences
+    def close(self):
         self.FP.close()
 
 

@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.filedialog
+import tkinter.messagebox
 import io
 import os
 import logging
@@ -36,6 +37,11 @@ class GUI:
         # Tk main loop
         self.Root = tk.Tk()
         self.__add_widget()
+        self.Root.protocol("WM_DELETE_WINDOW", self.__ask_quit)
+
+    def __ask_quit(self):
+        if tkinter.messagebox.askokcancel("Quit", "You want to quit now?"):
+            self.Root.quit()
 
     def __add_widget(self):
         # canvas

@@ -22,9 +22,9 @@ if __name__ == '__main__':
     if data.isFileAnalyzeComplete is True:
         print(data.UnknownData)
         print(data.HeaderDict)
-        d = data.SortingCenter()
+        d = data.sort_center()
         np.savetxt("foo.csv", d, delimiter=",")
-        e = data.SimplizeTable(module_sep=1, slice_sep=1)
+        e = data.simplize_table(module_sep=1, slice_sep=1)
         np.savetxt("fuse.csv", e, delimiter=",")
     else:
         print("Error!")

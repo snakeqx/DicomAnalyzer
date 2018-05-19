@@ -39,14 +39,10 @@ class SomatomGo:
             return -1, -1
         asi1 = math.asin(-1*distance/self.F)
         asi2 = math.asin(distance/self.F)
-        channel1 = math.ceil(
-            180*asi1/self.DeltaBeta/math.pi+self.CentralBeam
-        )
+        channel1 = math.ceil(180*asi1/self.DeltaBeta/math.pi+self.CentralBeam)
         if channel1 > self.Nmax:
             channel1 = None
-        channel2 = math.ceil(
-            180*asi2/self.DeltaBeta/math.pi+self.CentralBeam
-        )
+        channel2 = math.ceil(180*asi2/self.DeltaBeta/math.pi+self.CentralBeam)
         if channel2 > self.Nmax:
             channel2 = None
         return channel1, channel2 
